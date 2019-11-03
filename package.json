@@ -1,0 +1,28 @@
+{
+  "name": "ti-ladder",
+  "version": "0.0.1",
+  "main": "index.js",
+  "repository": "https://github.com/neciu/ti-ladder.git",
+  "author": "Tomasz Netczuk <contact@netczuk.pl>",
+  "license": "MIT",
+  "private": true,
+  "devDependencies": {
+    "@types/google-apps-script": "0.0.37",
+    "@types/node": "12.12.5",
+    "browserify": "16.5.0",
+    "gasify": "1.0.0",
+    "prettier": "1.18.2",
+    "tsify": "4.0.1",
+    "tslint": "5.20.0",
+    "tslint-config-prettier": "1.18.0",
+    "tslint-plugin-prettier": "2.0.1",
+    "typescript": "3.6.4"
+  },
+  "dependencies": {
+    "trueskill": "0.0.2"
+  },
+  "scripts": {
+    "build": "browserify src/index.ts -p [ tsify --noImplicitAny ] -p gasify -o ./build/bundle.gs",
+    "lint:fix": "tslint --project ./tsconfig.json --fix"
+  }
+}
